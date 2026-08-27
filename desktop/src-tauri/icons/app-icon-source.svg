@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="34%" cy="28%" r="78%">
+      <stop offset="0%" stop-color="#15152D"/>
+      <stop offset="100%" stop-color="#070713"/>
+    </radialGradient>
+    <clipPath id="squircle">
+      <path d="M512 64C768 64 960 256 960 512C960 768 768 960 512 960C256 960 64 768 64 512C64 256 256 64 512 64Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+    <path
+      d="M576 370C576 370 576 646 576 646C576 646 329 512 329 512C329 512 576 370 576 370Z"
+      fill="#F5F6FE"
+      stroke-linejoin="round"
+      stroke-width="36"
+      stroke="#F5F6FE"
+    />
+    <rect x="632" y="353" width="134" height="60" rx="30" fill="#81818E"/>
+    <rect x="601" y="482" width="243" height="59" rx="29.5" fill="#7A5CFB"/>
+    <rect x="601" y="611" width="165" height="60" rx="30" fill="#81818E"/>
+  </g>
+</svg>

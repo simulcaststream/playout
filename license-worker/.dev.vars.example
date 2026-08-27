@@ -1,0 +1,6 @@
+LICENSE_JWT_SECRET=local-dev-license-secret-change-in-prod
+
+# Stripe (test mode) — get keys from https://dashboard.stripe.com/test/apikeys
+# STRIPE_SECRET_KEY=sk_test_...
+# STRIPE_WEBHOOK_SECRET=whsec_...   # from: stripe listen --forward-to localhost:8788/webhook/stripe
+# STRIPE_PRICE_ID=price_...         # optional; omit to charge STRIPE_AMOUNT_CENTS (4900 = $49)

@@ -1,0 +1,27 @@
+# Calculated-live HLS manifest worker.
+name = "calculated-live-manifest"
+main = "src/index.ts"
+compatibility_date = "2026-07-03"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+# Event metadata: key = slug, value = JSON record (see README).
+# Binding is LIVE_EVENT_RECORDS (not EVENTS) to avoid clashing with other platforms.
+[[kv_namespaces]]
+binding = "LIVE_EVENT_RECORDS"
+id = "313d0a53f85949ce90268b501414e287" # `wrangler kv namespace create LIVE_EVENT_RECORDS`
+
+# Secrets (set via `wrangler secret put`):
+# SESSION_JWT_SECRET — HS256 key for email/paid gate session tokens
+# BUNNY_TOKEN_KEY      — Bunny CDN token authentication security key (paid gate)
+
+# Segment bytes (fMP4 init + .m4s). Keys: {slug}/video/720p/seg_00000.m4s, etc.
+[[r2_buckets]]
+binding = "SEGMENTS"
+bucket_name = "calculated-live-segments"
+
+# Optional: comma-separated CORS allowlist for cookieed browser origins
+# [vars]
+# CORS_ORIGINS = "https://example.com,https://www.example.com"

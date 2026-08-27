@@ -1,0 +1,31 @@
+# VOD pipeline tuned for the calculated-live manifest worker (fMP4 HLS).
+# CLI default (prep/package.sh). Desktop app generates a source-matched pipeline.
+streaming_mode: vod
+
+# ABR ladder — Shaka skips rungs above source resolution (desktop packer also filters).
+resolutions:
+  - 360p
+  - 480p
+  - 720p
+  - 1080p
+  - 1440p
+  - 2160p
+
+channel_layouts:
+  - stereo
+
+audio_codecs:
+  - aac
+
+# Software H.264. pack-shaka.sh switches to hw:h264 on macOS when PACK_* is unset.
+video_codecs:
+  - h264
+
+manifest_format:
+  - hls
+
+segment_size: 4
+segment_per_file: true
+
+# Shaka Packager uses .m4s for fmp4 segments.
+segment_folder: ""

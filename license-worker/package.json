@@ -1,0 +1,21 @@
+{
+  "name": "calculated-live-license",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8788 --local",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:integration": "bash scripts/test-integration.sh"
+  },
+  "dependencies": {
+    "hono": "^4.12.27"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260228.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.107.0"
+  }
+}

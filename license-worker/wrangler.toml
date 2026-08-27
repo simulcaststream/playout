@@ -1,0 +1,26 @@
+name = "calculated-live-license"
+main = "src/index.ts"
+compatibility_date = "2026-07-03"
+
+[[kv_namespaces]]
+binding = "LICENSE_DATA"
+id = "00000000000000000000000000000000"
+
+# Secrets (wrangler secret put):
+# LICENSE_JWT_SECRET — HS256 signing key for license tokens
+# STRIPE_SECRET_KEY — Stripe secret key (sk_test_... / sk_live_...)
+# STRIPE_WEBHOOK_SECRET — Stripe webhook signing secret (whsec_...)
+# WEBHOOK_SECRET — optional legacy manual webhook header
+# RESEND_API_KEY — optional, for magic-link email (dev: use /license/dev-login)
+
+[vars]
+APP_URL = "calculated-live://auth"
+ALLOW_DEV_LOGIN = "1"
+LICENSE_TTL_DAYS = "7"
+HEARTBEAT_GRACE_HOURS = "72"
+TRANSFER_COOLDOWN_DAYS = "7"
+# STRIPE_PRICE_ID = "price_..."  # optional; omit to use STRIPE_AMOUNT_CENTS
+# STRIPE_AMOUNT_CENTS = "4900"
+# STRIPE_CURRENCY = "usd"
+# STRIPE_SUCCESS_URL = "https://simulcast.stream/playout/thanks?session_id={CHECKOUT_SESSION_ID}"
+# STRIPE_CANCEL_URL = "https://simulcast.stream/playout/cancel"

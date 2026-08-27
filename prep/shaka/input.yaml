@@ -1,0 +1,4 @@
+# Minimal VOD input. prep/package.sh substitutes INPUT_FILE_PLACEHOLDER.
+inputs:
+  - name: INPUT_FILE_PLACEHOLDER
+    media_type: autodetect
